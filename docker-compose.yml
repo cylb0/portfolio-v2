@@ -1,0 +1,14 @@
+services:
+  mon-portfolio:
+    image: portfolio-v2:latest
+    build:
+      context: .
+      args:
+        VITE_EMAILJS_SERVICE: ${VITE_EMAILJS_SERVICE}
+        VITE_EMAILJS_TEMPLATE: ${VITE_EMAILJS_TEMPLATE}
+        VITE_EMAILJS_KEY: ${VITE_EMAILJS_KEY}
+        VITE_CONTACT_EMAIL: ${VITE_CONTACT_EMAIL}
+    container_name: portfolio-v2-prod
+    restart: unless-stopped
+    ports:
+      - '8083:80'
