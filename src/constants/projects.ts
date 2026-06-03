@@ -1,6 +1,6 @@
 import { Languages, type Language } from "../types/language";
 
-type Tech = "react" | "threejs" | "typescript" | "nextjs" | "restAPI" | "mysql" | "symfony" | "twig";
+type Tech = "react" | "threejs" | "typescript" | "nextjs" | "restAPI" | "mysql" | "symfony" | "twig" | "python" | "aws-lambda" | "s3" | "queues" | "blender";
 type TechList = Tech[];
 
 export type Project = {
@@ -33,7 +33,25 @@ export const projects: Project[] = [
     },
     tags: ["react", "typescript", "threejs"],
   },
-    {
+  {
+    "name": "LegoCatalogPipeline",
+    "screenshot": "screenshots/lego_pipeline.svg",
+    "subtext": {
+      [Languages.ENGLISH]: "Automate Lego data gathering from rebrickable csv, LDraw downloads, orphans removal, and .glb conversion for optimized React frontend rendering.",
+      [Languages.FRENCH]: "Automatiser la récupération des données CSV Rebrickable CSV, le téléchargement des archives LDraw, la suppression des orphelins et la conversion en .glb pour un affichage optimisé dans le frontend React."
+    },
+    "links": {
+      "github": "https://github.com/cylb0/lego-catalog-pipeline"
+    },
+    "tags": [
+      "python",
+      "aws-lambda",
+      "s3",
+      "queues",
+      "blender"
+    ]
+  },
+  {
     name: "PogoPVP",
     screenshot: "screenshots/pogopvp.webp",
     subtext: {

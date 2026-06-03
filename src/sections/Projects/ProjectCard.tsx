@@ -6,7 +6,7 @@ export default function ProjectCard(props: Project) {
   const { language } = useLanguage();
 
   return (
-    <article className="mt-2 group w-full h-full max-w-sm rounded-xl border-[2px] border-primary/30 bg-background-dark/75 backdrop-blur-xs transition-all duration-300 hover:border-primary/50 hover:-translate-y-1">
+    <article className="mt-2 group w-full h-full rounded-xl border-[2px] border-primary/30 bg-background-dark/75 backdrop-blur-xs transition-all duration-300 hover:border-primary/50 hover:-translate-y-1">
       <div className="overflow-hidden p-4">
         <img
           src={props.screenshot}
@@ -45,7 +45,7 @@ export default function ProjectCard(props: Project) {
           </div>
         </div>
 
-        <p className="mt-4 min-h-[72px] text-sm leading-relaxed text-secondary-ice">
+        <p className="mt-4 min-h-[72px] text-sm leading-relaxed text-justify text-secondary-ice">
           {props.subtext[language]}
         </p>
 
