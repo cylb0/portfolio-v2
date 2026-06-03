@@ -9,7 +9,7 @@ export default function Scene() {
     <Canvas
       className="w-full h-full"
       frameloop="always"
-      camera={{ position: [0, 20, 120], fov: 100 }}
+      camera={{ position: [0, 50, 150], fov: 140 }}
       gl={{ antialias: true }}
     >
       <OrbitControls
@@ -24,7 +24,7 @@ export default function Scene() {
           <Bloom
             intensity={1.2}
             luminanceThreshold={0}
-            luminanceSmoothing={0.5}
+            luminanceSmoothing={0.3}
             mipmapBlur
           />
         </EffectComposer>
