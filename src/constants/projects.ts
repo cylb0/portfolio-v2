@@ -1,6 +1,6 @@
 import { Languages, type Language } from "../types/language";
 
-type Tech = "react" | "threejs" | "typescript" | "nextjs" | "restAPI" | "mysql" | "symfony" | "twig" | "python" | "aws-lambda" | "s3" | "queues" | "blender";
+type Tech = string;
 type TechList = Tech[];
 
 export type Project = {
@@ -12,6 +12,7 @@ export type Project = {
     github?: string;
   };
   tags: TechList;
+  ongoing?: boolean
 };
 
 export const projectsTitle: Record<Language, string> = {
@@ -20,6 +21,27 @@ export const projectsTitle: Record<Language, string> = {
 };
 
 export const projects: Project[] = [
+  {
+    name: "Pkmscan",
+    screenshot: "screenshots/pkmscan.webp",
+    subtext: {
+      [Languages.ENGLISH]: "Serverless Pokémon card intelligence pipeline using YOLO-based detection, mobile capture upload, LLM identification (Gemini or similar), and Django API storage of normalized card assets and multilingual metadata.",
+      [Languages.FRENCH]: "Pipeline serverless d'analyse de cartes Pokémon utilisant une détection YOLO, upload depuis mobile, identification via LLM (Gemini ou autre), et API Django pour stocker les cartes normalisées et leurs métadonnées multilingues."
+    },
+    links: {
+      "github": "https://github.com/cylb0/pkmscan-main"
+    },
+    tags: [
+      "django",
+      "aws",
+      "ec2",
+      "iam",
+      "mobile",
+      "yolo",
+      "computer-vision"
+    ],
+    ongoing: true
+  },
   {
     name: "Portfolio",
     screenshot: "screenshots/portfolio.webp",
@@ -34,16 +56,16 @@ export const projects: Project[] = [
     tags: ["react", "typescript", "threejs"],
   },
   {
-    "name": "LegoCatalogPipeline",
-    "screenshot": "screenshots/lego_pipeline.svg",
-    "subtext": {
+    name: "LegoCatalogPipeline",
+    screenshot: "screenshots/lego_pipeline.svg",
+    subtext: {
       [Languages.ENGLISH]: "Automate Lego data gathering from rebrickable csv, LDraw downloads, orphans removal, and .glb conversion for optimized React frontend rendering.",
       [Languages.FRENCH]: "Automatiser la récupération des données CSV Rebrickable CSV, le téléchargement des archives LDraw, la suppression des orphelins et la conversion en .glb pour un affichage optimisé dans le frontend React."
     },
-    "links": {
+    links: {
       "github": "https://github.com/cylb0/lego-catalog-pipeline"
     },
-    "tags": [
+    tags: [
       "python",
       "aws-lambda",
       "s3",
@@ -85,7 +107,6 @@ export const projects: Project[] = [
       [Languages.FRENCH]: "Le projet de fin de formation que j'ai soutenu devant un jury de professionnels. Une boutique en ligne fictive et son back-office développée sous Symfony 6.",
     },
     links: {
-    //   live: "https://feuocu.morganfoucaut.fr",
       github: "https://github.com/cylb0/feuocu",
     },
     tags: ["symfony", "mysql", "twig"],

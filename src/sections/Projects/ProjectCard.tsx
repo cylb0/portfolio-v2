@@ -1,12 +1,16 @@
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import type { Project } from '../../constants/projects';
 import { useLanguage } from '../../contexts/LanguageContext';
+import Badge from '../../components/ui/Badge';
 
 export default function ProjectCard(props: Project) {
   const { language } = useLanguage();
 
   return (
-    <article className="mt-2 group w-full h-full rounded-xl border-[2px] border-primary/30 bg-background-dark/75 backdrop-blur-xs transition-all duration-300 hover:border-primary/50 hover:-translate-y-1">
+    <article className="relative overflow-hidden mt-2 group w-full h-full rounded-xl border-[2px] border-primary/30 bg-background-dark/75 backdrop-blur-xs transition-all duration-300 hover:border-primary/50 hover:-translate-y-1">
+      { props.ongoing && (
+        <Badge text="En cours" className="absolute top-0 right-0 bg-primary/70 animate-pulse"/>
+      )}
       <div className="overflow-hidden p-4">
         <img
           src={props.screenshot}
@@ -53,7 +57,7 @@ export default function ProjectCard(props: Project) {
           {props.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-cosmic-white/20 px-3 py-1 text-xs font-medium text-cosmic-white backdrop-blur-xs"
+              className="rounded-full border-2 border-cosmic-white/20 px-3 py-1 text-xs font-medium text-cosmic-white backdrop-blur-xs"
             >
               {tag}
             </span>
@@ -61,5 +65,5 @@ export default function ProjectCard(props: Project) {
         </div>
       </div>
     </article>
-  );
+  )
 }
