@@ -31,7 +31,7 @@ export default function Navbar() {
             window.scrollTo(0, 0);
           }}
         >
-          <Identity logo={Logo} name={name} title={dev[language]} />
+          <Identity logo={Logo} name={name} title={dev[language]} variant="navbar" />
         </Link>
 
         {/* Menu */}
