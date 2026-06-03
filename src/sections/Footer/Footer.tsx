@@ -12,7 +12,7 @@ export default function Footer() {
   const { language } = useLanguage();
 
   return (
-    <footer className="flex flex-col sm:px-32 mt-12 pb-12 mx-auto relative z-0">
+    <footer className="flex flex-col sm:px-32 pt-12 pb-12 mx-auto relative z-0">
       <div className="h-0.5 w-full bg-primary/30 mx-start mt-2" />
       <div className="flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center mt-4">
         <div className="flex flex-col justify-between h-full">
