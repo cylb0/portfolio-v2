@@ -25,7 +25,7 @@ export function ProjectCarousel({ className = "" }: ProjectCarouselProps) {
       className={className}
     >
       {projects.map((p, i) => (
-        <div key={`slide-${i}`} className="w-[90%] sm:w-96 shrink-0 p-6">
+        <div key={`slide-${i}`} className="w-[90%] sm:w-96 shrink-0 p-2 sm:p-6">
           <ProjectCard {...p} />
         </div>
       ))}
