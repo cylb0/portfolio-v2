@@ -4,17 +4,14 @@ import SectionLine from '../../components/ui/SectionLine';
 import { LiaSpaceShuttleSolid } from 'react-icons/lia';
 import ScrollIcon from '../../components/ui/ScrollIcon';
 import { useRef } from 'react';
-import useScrollDirection from '../../hooks/useScrollDirection';
 import useElementTop from '../../hooks/useElementTop';
 
 export default function Hero() {
   const { language } = useLanguage();
-  const direction = useScrollDirection();
   const iconRef = useRef<HTMLDivElement>(null);
   const iconTop = useElementTop(iconRef);
 
   const hideScrollIcon = iconTop < window.innerHeight * 0.5;
-  const rotation = direction == 'down' ? '-rotate-90' : 'rotate-90';
 
   return (
     <section className="relative w-full h-[calc(100vh-4rem)] flex flex-col">
@@ -54,7 +51,7 @@ export default function Hero() {
           link="#about"
           icon={LiaSpaceShuttleSolid}
           size={36}
-          className={`transition-transform duration-500 ease-in-out ${rotation}`}
+          className={`transition-transform duration-500 ease-in-out rotate-90`}
         />
       </div>
     </section>
