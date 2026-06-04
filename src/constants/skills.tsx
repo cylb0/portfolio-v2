@@ -32,8 +32,8 @@ export const technos: [string, IconType][] = [
 ];
 
 export const skillQuote: Record<Language, string> = {
-  [Languages.ENGLISH]:
-    "Le code est comme l'univers: infini, fascinant et en constante évolution.",
   [Languages.FRENCH]:
+    "Le code est comme l'univers: infini, fascinant et en constante évolution.",
+  [Languages.ENGLISH]:
     'Code is like the universe: infinite, fascinating and constantly evolving.',
 };
