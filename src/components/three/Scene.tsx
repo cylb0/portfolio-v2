@@ -9,7 +9,7 @@ export default function Scene() {
     <Canvas
       className="w-full h-full"
       frameloop="always"
-      camera={{ position: [0, 50, 150], fov: 140 }}
+      camera={{ position: [0, 50, 150], fov: 120 }}
       gl={{ antialias: true }}
     >
       <OrbitControls
