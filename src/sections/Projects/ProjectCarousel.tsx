@@ -14,10 +14,10 @@ export function ProjectCarousel({ className = "" }: ProjectCarouselProps) {
     <Carousel
       renderControls={({ prev, next }) => (
         <>
-          <CarouselButton handleClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 z-10">
+          <CarouselButton handleClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
             <LiaSpaceShuttleSolid className="h-8 w-8 hover:text-cosmic-white text-primary hover:scale-110 hover:-translate-x-1 -rotate-180 "/>
           </CarouselButton>
-          <CarouselButton handleClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 z-10">
+          <CarouselButton handleClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 z-10">
             <LiaSpaceShuttleSolid className="h-8 w-8 hover:text-cosmic-white text-primary hover:scale-110 hover:translate-x-1"/>
           </CarouselButton>
         </>
@@ -25,7 +25,7 @@ export function ProjectCarousel({ className = "" }: ProjectCarouselProps) {
       className={className}
     >
       {projects.map((p, i) => (
-        <div key={`slide-${i}`} className="w-96 shrink-0 p-6">
+        <div key={`slide-${i}`} className="w-[90%] sm:w-96 shrink-0 p-6">
           <ProjectCard {...p} />
         </div>
       ))}
