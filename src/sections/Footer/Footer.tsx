@@ -15,19 +15,19 @@ export default function Footer() {
     <footer className="flex flex-col sm:px-32 pt-12 pb-12 mx-auto relative z-0">
       <div className="h-0.5 w-full bg-primary/30 mx-start mt-2" />
       <div className="flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center mt-4">
-        <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col lg:justify-between h-full">
           <Identity
             logo={Logo}
             name={name}
             title={dev[language]}
             className="text-[16px]"
           />
-          <div className="flex items-center gap-2 ms-10 text-secondary-ice">
-            <FaRegCopyright className="h-4 w-4" />
+          <div className="flex items-start lg:items-center gap-2 ms-10 text-secondary-ice text-sm">
+            <FaRegCopyright className="h-3 w-3" />
             <span>{copyright[language]}</span>
           </div>
         </div>
-        <div className="self-start flex items-center">
+        <div className="hidden lg:block self-start flex items-center">
           <ScrollIcon
             link="#"
             icon={LiaSpaceShuttleSolid}
@@ -35,7 +35,7 @@ export default function Footer() {
             className="-rotate-90"
           />
         </div>
-        <div className="flex flex-col lg:flex-row justify-center lg:justify-end lg:self-end lg:gap-12 text-secondary-ice">
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-end lg:self-end lg:gap-12 text-secondary-ice text-sm mt-2">
           <Link
             to="/legal-notice"
             className="hover:underline hover:text-primary"
