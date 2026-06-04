@@ -5,18 +5,7 @@ export const copyright: Record<Language, string> = {
   [Languages.FRENCH]: 'Tous droits réservés.',
 };
 
-interface RgpdContent {
-  legal: string;
-  privacy: string;
+export const rgpd: Record<Language, string> = {
+  [Languages.FRENCH]: "Mentions légales et politique de confidentialité",
+  [Languages.ENGLISH]: "Legal Notice & Privacy Policy"
 }
-
-export const rgpd: Record<Language, RgpdContent> = {
-  [Languages.FRENCH]: {
-    legal: 'Mentions légales',
-    privacy: 'Politique de confidentialité',
-  },
-  [Languages.ENGLISH]: {
-    legal: 'Legal Notice',
-    privacy: 'Privacy Policy',
-  },
-};

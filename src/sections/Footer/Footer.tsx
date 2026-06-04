@@ -40,13 +40,7 @@ export default function Footer() {
             to="/legal-notice"
             className="hover:underline hover:text-primary"
           >
-            {rgpd[language].legal}
-          </Link>
-          <Link
-            to="/privacy-policy"
-            className="hover:underline hover:text-primary"
-          >
-            {rgpd[language].privacy}
+            {rgpd[language]}
           </Link>
         </div>
       </div>
