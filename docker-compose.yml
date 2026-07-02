@@ -1,5 +1,5 @@
 services:
-  mon-portfolio:
+  portfolio:
     image: portfolio-v2:latest
     build:
       context: .
@@ -10,5 +10,12 @@ services:
         VITE_CONTACT_EMAIL: ${VITE_CONTACT_EMAIL}
     container_name: portfolio-v2-prod
     restart: unless-stopped
-    ports:
-      - '8083:80'
+    # ports:
+    #   - '8083:80'
+    networks:
+      - reverse-proxy-nw
+
+networks:
+  reverse-proxy-nw:
+    external: true
+
