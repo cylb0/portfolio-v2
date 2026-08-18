@@ -29,17 +29,35 @@ export const hero: Record<Language, HeroContent> = {
   },
 };
 
-export const heroLinks: Record<string, { link: string; icon: IconType }> = {
+interface HeroLink {
+  link: string
+  icon: IconType
+  ariaLabel: Record<Language, string>
+}
+
+export const heroLinks: Record<string, HeroLink> = {
   github: {
     link: 'https://github.com/cylb0',
     icon: FaGithub,
+    ariaLabel: {
+      [Languages.ENGLISH]: 'Github Profile',
+      [Languages.FRENCH]: 'Profil Github'
+    }
   },
   linkedin: {
     link: 'https://www.linkedin.com/in/morgan-foucaut/',
     icon: FaLinkedin,
+    ariaLabel: {
+      [Languages.ENGLISH]: 'LinkedIn Profile',
+      [Languages.FRENCH]: 'Profil LinkedIn'
+    }
   },
   contact: {
     link: '#contact',
     icon: FaEnvelope,
+    ariaLabel: {
+      [Languages.ENGLISH]: 'Send an email',
+      [Languages.FRENCH]: 'Envoyer un e-mail'
+      }
   },
 };

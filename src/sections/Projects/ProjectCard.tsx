@@ -2,6 +2,7 @@ import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import type { Project } from '../../constants/projects';
 import { useLanguage } from '../../contexts/LanguageContext';
 import Badge from '../../components/ui/Badge';
+import { projectCardAriaLabels } from '../../constants/ariaLabels';
 
 export default function ProjectCard(props: Project) {
   const { language } = useLanguage();
@@ -30,6 +31,7 @@ export default function ProjectCard(props: Project) {
                 href={props.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={projectCardAriaLabels[language].github(props.name)}
                 className="text-cosmic-white transition-colors hover:text-primary"
               >
                 <FaGithub size={24} />
@@ -41,6 +43,7 @@ export default function ProjectCard(props: Project) {
                 href={props.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={projectCardAriaLabels[language].live(props.name)}
                 className="text-cosmic-white transition-colors hover:text-primary"
               >
                 <FaExternalLinkAlt size={24} />

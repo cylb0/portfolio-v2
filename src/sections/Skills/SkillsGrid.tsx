@@ -17,7 +17,7 @@ export default function SkillsGrid() {
           variants={staggerItem()}
           className="flex flex-col items-center gap-2"
         >
-          <Icon size={40} className="text-primary" />
+          <Icon size={40} className="text-primary" aria-hidden="true" />
           <span className="text-cosmic-white text-xs text-center font-bold bg-background-dark/75 backdrop-blur-xs rounded-xl px-2 py-1">
             {name}
           </span>

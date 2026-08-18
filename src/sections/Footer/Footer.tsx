@@ -7,6 +7,7 @@ import { copyright, rgpd } from '../../constants/footer';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FaRegCopyright } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { scrollAriaLabels } from '../../constants/ariaLabels';
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -32,6 +33,7 @@ export default function Footer() {
             link="#"
             icon={LiaSpaceShuttleSolid}
             size={36}
+            ariaLabel={scrollAriaLabels[language].top}
             className="-rotate-90"
           />
         </div>

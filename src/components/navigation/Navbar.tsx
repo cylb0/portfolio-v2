@@ -9,6 +9,7 @@ import { dev, name } from '../../constants/dev';
 import { Link } from 'react-router-dom';
 import Identity from '../ui/Identity';
 import Logo from '../../assets/logo.svg';
+import { menuAriaLabels } from '../../constants/ariaLabels';
 
 export default function Navbar() {
   const [active, setActive] = useState('');
@@ -47,6 +48,9 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-white w-8 h-9"
           >
+            <span className="sr-only">
+              {menuOpen ? menuAriaLabels[language].close : menuAriaLabels[language].open}
+            </span>
             {menuOpen ? <MdClose size={24} /> : <RxHamburgerMenu size={24} />}
           </button>
         </div>

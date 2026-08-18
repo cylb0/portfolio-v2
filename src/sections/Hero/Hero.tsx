@@ -5,6 +5,7 @@ import { LiaSpaceShuttleSolid } from 'react-icons/lia';
 import ScrollIcon from '../../components/ui/ScrollIcon';
 import { useRef } from 'react';
 import useElementTop from '../../hooks/useElementTop';
+import { scrollAriaLabels } from '../../constants/ariaLabels';
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -29,8 +30,15 @@ export default function Hero() {
           <div className="flex justify-start items-center gap-3 ms-10">
             {Object.entries(heroLinks).map(([key, item]) => {
               const Icon = item.icon;
+              const IsExternal = item.link.startsWith('http')
               return (
-                <a href={item.link} key={key}>
+                <a
+                  key={key}
+                  href={item.link}
+                  aria-label={item.ariaLabel[language]}
+                  target={IsExternal ? '_blank' : undefined}
+                  rel={IsExternal ? 'noopener noreferrer' : undefined}
+                >
                   <Icon
                     className="w-8 h-8 text-primary hover: text-cosmic-white transition-colors"
                     size={28}
@@ -50,6 +58,7 @@ export default function Hero() {
         <ScrollIcon
           link="#about"
           icon={LiaSpaceShuttleSolid}
+          ariaLabel={scrollAriaLabels[language].about}
           size={36}
           className={`transition-transform duration-500 ease-in-out rotate-90`}
         />
