@@ -30,9 +30,9 @@ export const hero: Record<Language, HeroContent> = {
 };
 
 interface HeroLink {
-  link: string
-  icon: IconType
-  ariaLabel: Record<Language, string>
+  link: string;
+  icon: IconType;
+  ariaLabel: Record<Language, string>;
 }
 
 export const heroLinks: Record<string, HeroLink> = {
@@ -41,23 +41,23 @@ export const heroLinks: Record<string, HeroLink> = {
     icon: FaGithub,
     ariaLabel: {
       [Languages.ENGLISH]: 'Github Profile',
-      [Languages.FRENCH]: 'Profil Github'
-    }
+      [Languages.FRENCH]: 'Profil Github',
+    },
   },
   linkedin: {
     link: 'https://www.linkedin.com/in/morgan-foucaut/',
     icon: FaLinkedin,
     ariaLabel: {
       [Languages.ENGLISH]: 'LinkedIn Profile',
-      [Languages.FRENCH]: 'Profil LinkedIn'
-    }
+      [Languages.FRENCH]: 'Profil LinkedIn',
+    },
   },
   contact: {
     link: '#contact',
     icon: FaEnvelope,
     ariaLabel: {
       [Languages.ENGLISH]: 'Send an email',
-      [Languages.FRENCH]: 'Envoyer un e-mail'
-      }
+      [Languages.FRENCH]: 'Envoyer un e-mail',
+    },
   },
 };

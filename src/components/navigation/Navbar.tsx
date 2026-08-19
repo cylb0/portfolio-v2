@@ -32,7 +32,12 @@ export default function Navbar() {
             window.scrollTo(0, 0);
           }}
         >
-          <Identity logo={Logo} name={name} title={dev[language]} variant="navbar" />
+          <Identity
+            logo={Logo}
+            name={name}
+            title={dev[language]}
+            variant="navbar"
+          />
         </Link>
 
         {/* Menu */}
@@ -49,7 +54,9 @@ export default function Navbar() {
             className="text-white w-8 h-9"
           >
             <span className="sr-only">
-              {menuOpen ? menuAriaLabels[language].close : menuAriaLabels[language].open}
+              {menuOpen
+                ? menuAriaLabels[language].close
+                : menuAriaLabels[language].open}
             </span>
             {menuOpen ? <MdClose size={24} /> : <RxHamburgerMenu size={24} />}
           </button>

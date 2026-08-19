@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="flex justify-start items-center gap-3 ms-10">
             {Object.entries(heroLinks).map(([key, item]) => {
               const Icon = item.icon;
-              const IsExternal = item.link.startsWith('http')
+              const IsExternal = item.link.startsWith('http');
               return (
                 <a
                   key={key}

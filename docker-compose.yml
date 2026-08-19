@@ -18,4 +18,3 @@ services:
 networks:
   reverse-proxy-nw:
     external: true
-

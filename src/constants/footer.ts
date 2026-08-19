@@ -6,6 +6,6 @@ export const copyright: Record<Language, string> = {
 };
 
 export const rgpd: Record<Language, string> = {
-  [Languages.FRENCH]: "Mentions légales et politique de confidentialité",
-  [Languages.ENGLISH]: "Legal Notice & Privacy Policy"
-}
+  [Languages.FRENCH]: 'Mentions légales et politique de confidentialité',
+  [Languages.ENGLISH]: 'Legal Notice & Privacy Policy',
+};

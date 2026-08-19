@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <SectionWrapper id="projects" className="text-cosmic-white">
       <SectionTitle title={projectsTitle[language]} />
-        <ProjectCarousel className="mt-3" />
+      <ProjectCarousel className="mt-3" />
     </SectionWrapper>
   );
 }

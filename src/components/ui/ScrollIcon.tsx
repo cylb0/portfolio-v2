@@ -17,11 +17,7 @@ export default function ScrollIcon({
   className,
 }: ScrollIconProps) {
   return (
-    <a
-      href={link}
-      aria-label={ariaLabel}
-      className="w-[35px] h-[65px]"
-    >
+    <a href={link} aria-label={ariaLabel} className="w-[35px] h-[65px]">
       <motion.div
         animate={{
           y: [0, 30, 0],
