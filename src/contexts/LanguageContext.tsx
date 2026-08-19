@@ -1,5 +1,10 @@
-import { createContext, useContext, useState } from 'react';
-import type { Language } from '../types/language';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { type Language, Languages } from '../types/language';
+
+const htmlLang: Record<Language, string> = {
+  [Languages.FRENCH]: 'fr',
+  [Languages.ENGLISH]: 'en',
+};
 
 interface LanguageContextType {
   language: Language;
@@ -12,6 +17,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('french');
   const toggle = () =>
     setLanguage((l) => (l === 'french' ? 'english' : 'french'));
+
+  useEffect(() => {
+    document.documentElement.lang = htmlLang[language];
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, toggle }}>
