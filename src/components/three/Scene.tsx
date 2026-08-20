@@ -8,11 +8,7 @@ export default function Scene() {
   return (
     <Canvas
       className="w-full h-full"
-      // "demand" : le canvas ne redessine que sur appel a invalidate(), au
-      // lieu des 60 images par seconde de "always". OrbitControls en emet un a
-      // chaque changement, le drag reste donc vivant -- mais plus rien
-      // n'anime la rotation, la galaxie est figee au repos.
-      frameloop="demand"
+      frameloop="always"
       camera={{ position: [0, 50, 150], fov: 120 }}
       gl={{ antialias: true }}
     >

@@ -1,5 +1,5 @@
 import { useGLTF, useTexture } from '@react-three/drei';
-import { useFrame, useThree } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { useRef, useEffect } from 'react';
 
 import * as THREE from 'three';
@@ -17,7 +17,6 @@ export default function Model() {
   const { scene } = useGLTF('/models/need_some_space.glb');
   const ref = useRef<any>(null);
   const texture = useTexture('/circle.png');
-  const invalidate = useThree((state) => state.invalidate);
 
   useEffect(() => {
     texture.minFilter = THREE.LinearFilter;
@@ -66,13 +65,7 @@ export default function Model() {
         toneMapped: false,
       });
     });
-
-    // Cet effet mute la scene sans passer par un rendu React, donc r3f ne sait
-    // pas qu'il y a quelque chose de nouveau a dessiner. En frameloop="demand"
-    // la seule image deja rendue date d'avant la coloration : sans cet appel,
-    // les points restent sur leur materiau d'origine.
-    invalidate();
-  }, [scene, texture, invalidate]);
+  }, [scene, texture]);
 
   useFrame(() => {
     if (ref.current) ref.current.rotation.y += 0.001;
